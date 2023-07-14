@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Compile') {
             steps {
-                echo 'Compiling the code'
+                echo 'Compiling the code for contacts api'
             }
         }
         stage('Test') {
