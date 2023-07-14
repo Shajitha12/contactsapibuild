@@ -36,6 +36,21 @@ pipeline {
                 sh "mvn package -DskipTests"
             }
         }
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    dockerImage = docker.build("srghouse/contactsbootapi:${env.BUILD_NUMBER}")
+                }
+            }
+        stage('Push Docker Image') {
+            steps {
+                script {
+                    docker.withRegistry('https://registry.hub.docker.com', 'dockercred') {
+                        dockerImage.push()
+                    }
+                }
+            }
+        }
     
     }
     post{
