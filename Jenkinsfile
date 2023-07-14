@@ -42,6 +42,7 @@ pipeline {
                     dockerImage = docker.build("srghouse/contactsbootapi:${env.BUILD_NUMBER}")
                 }
             }
+        }
         stage('Push Docker Image') {
             steps {
                 script {
