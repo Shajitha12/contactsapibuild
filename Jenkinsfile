@@ -13,10 +13,12 @@ pipeline {
     }
     stages {
         stage('Info') {
+            steps {
                 echo "$env.JOB_NAME"
                 echo "$env.BUILD_NUMBER"
                 echo "$env.BUILD_ID"
                 echo "$env.BUILD_URL"
+            }
             
         }
         stage('Compile') {
