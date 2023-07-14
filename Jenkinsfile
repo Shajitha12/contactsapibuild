@@ -13,9 +13,6 @@ pipeline {
     }
     stages {
         stage('Info') {
-            steps {
-                echo "Maven Home: ${mavenHome}"
-                echo "Docker Home: ${dockerHome}"
                 echo "$env.JOB_NAME"
                 echo "$env.BUILD_NUMBER"
                 echo "$env.BUILD_ID"
