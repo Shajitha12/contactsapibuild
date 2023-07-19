@@ -36,6 +36,22 @@ pipeline {
                 sh "mvn package -DskipTests"
             }
         }
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    dockerImage = docker.build("shajithafaruk/contactsbootapi:${env.BUILD_NUMBER}")
+                }
+            }
+        }
+        stage('Push Docker Image') {
+            steps {
+                script {
+                    docker.withRegistry('https://registry.hub.docker.com', '8629822c-d400-41dd-95a5-d6aa2e03b6bd') {
+                        dockerImage.push()
+                    }
+                }
+            }
+        }
     
     }
     post{
