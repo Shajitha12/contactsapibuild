@@ -46,7 +46,7 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 script {
-                    docker.withRegistry('https://registry.hub.docker.com', '8629822c-d400-41dd-95a5-d6aa2e03b6bd') {
+                    docker.withRegistry('https://registry.hub.docker.com', 'shajitha') {
                         dockerImage.push()
                     }
                 }
