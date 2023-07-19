@@ -1,5 +1,6 @@
 // jenkins pipeline script
 // pipeline with stages compile, test, package and echo message in the stages
+// checkinggit
 pipeline {
     agent any
     stages {
@@ -20,4 +21,3 @@ pipeline {
         }
     }
 }
-```
