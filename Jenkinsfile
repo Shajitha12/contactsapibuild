@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Compile') {
             steps {
-                echo 'Compiling the code'
+                echo 'Compiling the code the code'
             }
         }
         stage('Test') {
